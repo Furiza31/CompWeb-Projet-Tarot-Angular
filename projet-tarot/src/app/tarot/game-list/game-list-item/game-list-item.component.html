@@ -1,0 +1,22 @@
+<div>
+    <div>
+        Partie numéro {{game.id}}
+    </div>
+    <div>
+        {{game.desc}}
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>Nom</th>
+                <th>Score</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of game.players; let i = index">
+                    <td>{{player.name}}</td>
+                    <td>{{game.scores[i]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

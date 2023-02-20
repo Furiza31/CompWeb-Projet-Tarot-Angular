@@ -1,0 +1,5 @@
+<main>
+    <h1>ANCIENNE PARTIES</h1>
+    <h2>{{(games|async)?.length}} Parties jouées</h2>
+    <section app-game-list-item *ngFor="let game of games|async" [game]="game"></section>
+</main>

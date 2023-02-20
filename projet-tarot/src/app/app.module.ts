@@ -3,14 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GameComponent } from './tarot/game/game.component';
+import { GameListComponent } from './tarot/game-list/game-list.component';
+import { GameDetailsComponent } from './tarot/game-details/game-details.component';
+import { HomeComponent } from './tarot/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GameListItemComponent } from './tarot/game-list/game-list-item/game-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameComponent,
+    GameListComponent,
+    GameDetailsComponent,
+    HomeComponent,
+    GameListItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
