@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap%27');
+:root {
+    --black: #222831;
+    --grey: #393E46;
+    --blue: #0092CA;
+    --white: #EEEEEE;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 17px;
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
