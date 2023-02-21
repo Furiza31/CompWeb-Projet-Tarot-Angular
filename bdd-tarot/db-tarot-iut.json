@@ -1,32 +1,96 @@
 {
-  "parties": [
-    {
-      "id": 1,
-      "descr": "Lundi matin 20/02/2013",
-      "joueurs": ["Laurent", "Marianne", "Marie", "Fabrice"],
-      "scores"  : [20,20,564,-604]
-    }
-  ],
-  "manche" : [
-      {
-        "id"       : 1,
-        "idPartie" : 1,
-        "scores"   : [-150,-150,450,-150]
-      },
-      {
-        "id"       : 2,
-        "idPartie" : 1,
-        "scores"   : [54,54,-162,54]
-      },
-      {
-        "id"       : 3,
-        "idPartie" : 1,
-        "scores"   : [-40,-40,120,-40]
-      },
-      {
-        "id"       : 4,
-        "idPartie" : 1,
-        "scores"   : [156,156,156,-468]
-      }
+    "parties": [{
+            "id": 1,
+            "time": {
+                "date": "20/02/2013",
+                "hour": "09:32"
+            },
+            "players": [{
+                    "name": "Laurent",
+                    "score": 20
+                },
+                {
+                    "name": "Marianne",
+                    "score": 20
+                },
+                {
+                    "name": "Marie",
+                    "score": 564
+                },
+                {
+                    "name": "Fabrice",
+                    "score": -604
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "time": {
+                "date": "19/05/2019",
+                "hour": "17:54"
+            },
+            "players": [{
+                    "name": "Laurent",
+                    "score": -20
+                },
+                {
+                    "name": "Marianne",
+                    "score": 150
+                },
+                {
+                    "name": "Marie",
+                    "score": 564
+                },
+                {
+                    "name": "Fabrice",
+                    "score": -604
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "time": {
+                "date": "07/09/2002",
+                "hour": "04:10"
+            },
+            "players": [{
+                    "name": "Laurent",
+                    "score": 20
+                },
+                {
+                    "name": "Marianne",
+                    "score": -200
+                },
+                {
+                    "name": "Marie",
+                    "score": -64
+                },
+                {
+                    "name": "Fabrice",
+                    "score": 1004
+                }
+            ]
+        }
+    ],
+    "manche": [{
+            "id": 1,
+            "idPartie": 1,
+            "scores": [-150, -150, 450, -150]
+        },
+        {
+            "id": 2,
+            "idPartie": 1,
+            "scores": [54, 54, -162, 54]
+        },
+        {
+            "id": 3,
+            "idPartie": 1,
+            "scores": [-40, -40, 120, -40]
+        },
+        {
+            "id": 4,
+            "idPartie": 1,
+            "scores": [156, 156, 156, -468]
+        }
     ]
 }

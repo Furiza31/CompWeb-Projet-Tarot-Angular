@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingStatus } from 'app/models/loading-status';
 import { Game } from 'app/models/game';
 import { GameService } from 'app/services/game.service';
 import { Observable } from 'rxjs';
@@ -10,6 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class GameListComponent implements OnInit {
   public games!: Observable<Game[]>;
+  public status: LoadingStatus = LoadingStatus.LOADING;
+  readonly loadingStatus = LoadingStatus;
 
   constructor(
     private gameService: GameService
@@ -17,6 +20,10 @@ export class GameListComponent implements OnInit {
 
   ngOnInit(): void {
     this.games = this.gameService.getGameParties();
+    this.games.subscribe({
+      next: () => this.status = LoadingStatus.LOADED,
+      error: () => this.status = LoadingStatus.ERROR
+    });
   }
 
 }
