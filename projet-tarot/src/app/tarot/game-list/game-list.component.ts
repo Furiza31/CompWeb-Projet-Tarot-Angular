@@ -10,7 +10,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./game-list.component.css']
 })
 export class GameListComponent implements OnInit {
-  public games!: Observable<Game[]>;
+  // the observable
+  public gamesObservable!: Observable<Game[]>;
+  // varaible to dodge the loading time
+  public games: Game[] = [];
+  public gameSize: number = 0;
+
+  // status of the loading
   public status: LoadingStatus = LoadingStatus.LOADING;
   readonly loadingStatus = LoadingStatus;
 
@@ -19,9 +25,13 @@ export class GameListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.games = this.gameService.getGameParties();
-    this.games.subscribe({
-      next: () => this.status = LoadingStatus.LOADED,
+    this.gamesObservable = this.gameService.getGameParties();
+    this.gamesObservable.subscribe({
+      next: (i) => {
+        this.status = LoadingStatus.LOADED
+        this.gameSize = i.length;
+        this.games = i;
+      },
       error: () => this.status = LoadingStatus.ERROR
     });
   }

@@ -1,10 +1,10 @@
 <main>
     <h1>ANCIENNES PARTIES</h1>
     <div *ngIf="this.status == this.loadingStatus.LOADED" id="loaded">
-        <h2 *ngIf="(games|async)!.length <= 0">Aucune partie jouée</h2>
-        <h2 *ngIf="(games|async)!.length == 1">{{(games|async)!.length}} Partie jouée</h2>
-        <h2 *ngIf="(games|async)!.length > 1">{{(games|async)!.length}} Parties jouées</h2>
-        <section app-game-list-item *ngFor="let game of games|async" [game]="game"></section>
+        <h2 *ngIf="gameSize <= 0">Aucune partie jouée</h2>
+        <h2 *ngIf="gameSize == 1">{{gameSize}} Partie jouée</h2>
+        <h2 *ngIf="gameSize > 1">{{gameSize}} Parties jouées</h2>
+        <section app-game-list-item *ngFor="let game of games" [game]="game"></section>
     </div>
     <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">
         <div id="loader"></div>
