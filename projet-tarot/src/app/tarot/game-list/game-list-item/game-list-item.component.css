@@ -44,6 +44,7 @@ fieldset>div>a {
     background-color: var(--black);
     border-radius: 5px;
     transition-duration: 0.3s;
+    color: var(--white);
 }
 
 fieldset>div>a:hover {
