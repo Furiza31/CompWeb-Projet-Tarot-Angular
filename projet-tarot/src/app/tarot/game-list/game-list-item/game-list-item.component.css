@@ -1,7 +1,7 @@
 fieldset {
     position: relative;
     display: block;
-    width: 90%;
+    width: 100%;
     padding: 20px;
     background-color: var(--grey);
     border-radius: 5px;

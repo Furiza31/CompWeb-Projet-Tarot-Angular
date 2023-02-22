@@ -9,6 +9,7 @@ import { GameDetailsComponent } from './tarot/game-details/game-details.componen
 import { HomeComponent } from './tarot/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameListItemComponent } from './tarot/game-list/game-list-item/game-list-item.component';
+import { GameDetailsItemComponent } from './tarot/game-details/game-details-item/game-details-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GameListItemComponent } from './tarot/game-list/game-list-item/game-lis
     GameListComponent,
     GameDetailsComponent,
     HomeComponent,
-    GameListItemComponent
+    GameListItemComponent,
+    GameDetailsItemComponent
   ],
   imports: [
     BrowserModule,

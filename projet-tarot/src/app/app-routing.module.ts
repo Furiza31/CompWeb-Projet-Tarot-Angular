@@ -16,11 +16,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'game/list',
+    path: 'games/list',
     component: GameListComponent
   },
   {
-    path: 'detail/:id',
+    path: 'details/:id',
     component: GameDetailsComponent
   },
   {

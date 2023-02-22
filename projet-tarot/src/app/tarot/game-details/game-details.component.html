@@ -1,1 +1,16 @@
-<p>game-details works!</p>
+<main>
+    <h1><i class="fa-solid fa-dice fa-flip-horizontal"></i>PARTIE N°{{this.route.snapshot.params['id']}}<i class="fa-solid fa-dice"></i></h1>
+    <div *ngIf="this.status == this.loadingStatus.LOADED">
+        <h2 *ngIf="rounds == undefined"></h2>
+        <h2 *ngIf="rounds!.length == 0">La partie n'a pas encore de manches</h2>
+        <h2 *ngIf="rounds!.length > 1">{{rounds.length}} Manches jouées</h2>
+        <h2 *ngIf="rounds!.length == 1">{{rounds.length}} Manche jouée</h2>
+        <section>
+            <app-game-details-item *ngFor="let round of rounds" [round]="round"></app-game-details-item>
+        </section>
+    </div>
+    <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">
+        <div></div>
+        <h2>Chargement</h2>
+    </div>
+</main>

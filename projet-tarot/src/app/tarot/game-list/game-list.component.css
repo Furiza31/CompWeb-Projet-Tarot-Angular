@@ -25,9 +25,16 @@ main div section {
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 20px;
+}
+
+app-game-list-item {
+    position: relative;
+    display: block;
+    width: 90%;
     margin-top: 20px;
 }
 
@@ -44,19 +51,15 @@ main div#loading>div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-main div#loading>div#loader {
     border-bottom: none;
     border-left: none;
     width: 150px;
     height: 150px;
-    animation: loader1 2s alternate-reverse infinite;
     background-color: var(--blue);
     border-radius: 50%;
 }
 
-main div#loading>div#loader::after {
+main div#loading>div::after {
     content: "";
     position: absolute;
     display: block;
@@ -65,30 +68,18 @@ main div#loading>div#loader::after {
     transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     background-color: var(--black);
     border: 5px solid var(--green);
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    animation: loader2 2s ease infinite;
+    animation: loader 2s ease infinite;
     box-sizing: border-box;
 }
 
-@keyframes loader1 {
+@keyframes loader {
     0% {
-        box-shadow: 1px 1px 5px var(--blue);
+        transform: translate(-50%, -50%) rotate(45deg);
     }
     100% {
-        box-shadow: 1px 1px 50px var(--blue);
-    }
-}
-
-@keyframes loader2 {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(405deg);
     }
 }
 

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class GameListComponent implements OnInit {
   // the observable
   public gamesObservable!: Observable<Game[]>;
-  // varaible to dodge the loading time
+  // varaible to dodge the loading time insted of using "| async" -> async remake a request
   public games: Game[] = [];
   public gameSize: number = 0;
 
@@ -28,9 +28,9 @@ export class GameListComponent implements OnInit {
     this.gamesObservable = this.gameService.getGameParties();
     this.gamesObservable.subscribe({
       next: (i) => {
-        this.status = LoadingStatus.LOADED
         this.gameSize = i.length;
         this.games = i;
+        this.status = LoadingStatus.LOADED
       },
       error: () => this.status = LoadingStatus.ERROR
     });
