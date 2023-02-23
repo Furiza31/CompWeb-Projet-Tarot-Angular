@@ -37,17 +37,17 @@ main div section {
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     margin-top: 20px;
 }
 
-app-game-details-item {
+main div section>div {
     position: relative;
     display: block;
     width: 90%;
-    margin-top: 20px;
+    border: 1px solid var(--white);
 }
 
 main div#loading {

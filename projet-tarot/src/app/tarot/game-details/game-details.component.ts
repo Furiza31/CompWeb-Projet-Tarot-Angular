@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Game } from 'app/models/game';
 import { LoadingStatus } from 'app/models/loading-status';
-import { Player } from 'app/models/player';
 import { Round } from 'app/models/round';
 import { GameService } from 'app/services/game.service';
 
@@ -13,7 +13,7 @@ import { GameService } from 'app/services/game.service';
 export class GameDetailsComponent implements OnInit {
 
   public rounds: Round[] = [];
-  public players: Player[] = [];
+  public game: Game = new Game();
   readonly loadingStatus = LoadingStatus;
   public status: LoadingStatus = LoadingStatus.LOADING;
 
@@ -28,7 +28,7 @@ export class GameDetailsComponent implements OnInit {
 
     this.gameService.getGameParty(id).subscribe({
       next: game => {
-        this.players = game.players;
+        this.game = game;
         this.gameService.getRounds(id).subscribe({
           next: rounds => {
             this.rounds = rounds;
