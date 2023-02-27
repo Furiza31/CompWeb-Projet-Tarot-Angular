@@ -75,26 +75,31 @@
     "manche": [{
             "id": 1,
             "idPartie": 1,
-            "scores": [-150, -150, 450, -150]
+            "roundNumber": 1,
+            "scores": [-300, -210, 450, -150]
         },
         {
             "id": 2,
             "idPartie": 1,
-            "scores": [54, 54, -162, 54]
+            "roundNumber": 2,
+            "scores": [20, 50, -162, 54]
         },
         {
             "id": 3,
             "idPartie": 1,
-            "scores": [-40, -40, 120, -40]
+            "roundNumber": 3,
+            "scores": [-300, -100, 120, -40]
         },
         {
             "id": 4,
             "idPartie": 1,
-            "scores": [156, 156, 156, -468]
+            "roundNumber": 4,
+            "scores": [70, 160, 50, -468]
         },
         {
-            "id": 4,
+            "id": 1,
             "idPartie": 2,
+            "roundNumber": 1,
             "scores": [
                 156,
                 156,

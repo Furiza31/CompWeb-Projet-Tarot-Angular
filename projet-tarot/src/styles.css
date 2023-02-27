@@ -10,6 +10,31 @@
     --green: #00C9A7;
 }
 
+
+/* scrollbar */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 5px;
+}
+
 * {
     padding: 0px;
     margin: 0px;

@@ -6,12 +6,7 @@
         <h2 *ngIf="rounds!.length > 1">{{rounds.length}} Manches jouées</h2>
         <h2 *ngIf="rounds!.length == 1">{{rounds.length}} Manche jouée</h2>
         <section>
-          <div>
-            <app-game-details-item *ngFor="let round of rounds" [round]="round"></app-game-details-item>
-          </div>
-          <div>
-            <app-game-details-graphic-item></app-game-details-graphic-item>
-          </div>
+            <app-game-details-graphic-item [game]="game" [rounds]="rounds"></app-game-details-graphic-item>
         </section>
     </div>
     <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">
