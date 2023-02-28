@@ -46,7 +46,6 @@ app-game-details-graphic-item {
     position: relative;
     display: block;
     width: 100%;
-    min-height: 600px;
 }
 
 main div#loading {
