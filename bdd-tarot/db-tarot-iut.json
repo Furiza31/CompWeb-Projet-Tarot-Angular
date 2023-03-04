@@ -98,7 +98,7 @@
     ],
     "manche": [{
             "id": 1,
-            "idPartie": 1,
+            "idGame": 1,
             "roundNumber": 1,
             "scores": [-300, -210,
                 450, -150
@@ -106,7 +106,7 @@
         },
         {
             "id": 2,
-            "idPartie": 1,
+            "idGame": 1,
             "roundNumber": 2,
             "scores": [
                 20,
@@ -116,7 +116,7 @@
         },
         {
             "id": 3,
-            "idPartie": 1,
+            "idGame": 1,
             "roundNumber": 3,
             "scores": [-300, -100,
                 120, -40
@@ -124,7 +124,7 @@
         },
         {
             "id": 4,
-            "idPartie": 1,
+            "idGame": 1,
             "roundNumber": 4,
             "scores": [
                 70,
@@ -134,7 +134,7 @@
         },
         {
             "id": 6,
-            "idPartie": 2,
+            "idGame": 2,
             "roundNumber": 1,
             "scores": [
                 156,
@@ -144,7 +144,7 @@
         },
         {
             "id": 10,
-            "idPartie": 4,
+            "idGame": 4,
             "roundNumber": 0,
             "scores": [-202,
                 606, -202, -202
@@ -152,7 +152,7 @@
         },
         {
             "id": 11,
-            "idPartie": 4,
+            "idGame": 4,
             "roundNumber": 1,
             "scores": [-404,
                 404, -404,
@@ -161,7 +161,7 @@
         },
         {
             "id": 12,
-            "idPartie": 4,
+            "idGame": 4,
             "roundNumber": 2,
             "scores": [-606,
                 1010, -606,
@@ -170,7 +170,7 @@
         },
         {
             "id": 13,
-            "idPartie": 4,
+            "idGame": 4,
             "roundNumber": 3,
             "scores": [
                 0,
@@ -180,7 +180,7 @@
         },
         {
             "id": 14,
-            "idPartie": 4,
+            "idGame": 4,
             "roundNumber": 4,
             "scores": [
                 606,

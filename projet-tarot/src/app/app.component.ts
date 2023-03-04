@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationHisotryService } from './services/navigation-hisotry.service';
+import { NavigationHistoryService } from './services/navigation-history.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'projet-tarot';
 
   constructor(
-    public navigation: NavigationHisotryService
+    public navigation: NavigationHistoryService
   ) {
     this.navigation.init();
   }

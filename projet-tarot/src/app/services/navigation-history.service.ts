@@ -4,9 +4,9 @@ import { NavigationEnd, Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class NavigationHisotryService {
+export class NavigationHistoryService {
 
-  private hisotry: string[] = [];
+  private history: string[] = [];
 
   constructor(
     private router: Router
@@ -15,25 +15,25 @@ export class NavigationHisotryService {
   public init(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.hisotry.push(event.urlAfterRedirects);
-        if (this.hisotry.length > 2) {
-          this.hisotry.shift();
+        this.history.push(event.urlAfterRedirects);
+        if (this.history.length > 2) {
+          this.history.shift();
         }
       }
     });
   }
 
   public previousUrl(): string {
-    if (this.hisotry.length > 0) {
-      return this.hisotry[this.hisotry.length - 2];
+    if (this.history.length > 0) {
+      return this.history[this.history.length - 2];
     }
     return '';
   }
 
   public back(): void {
     // èleve le dernier élément de l'historique
-    let previous = this.hisotry.pop();
-    if (this.hisotry.length > 0) {
+    let previous = this.history.pop();
+    if (this.history.length > 0) {
       this.router.navigateByUrl(previous!);
     } else {
       this.router.navigateByUrl('/');

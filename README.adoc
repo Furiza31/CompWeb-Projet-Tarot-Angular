@@ -1,2 +1,106 @@
-# CompWeb-Projet-Tarot-Angular
-Projet - Tarot
+= Dossier de conception - Projet Tarot
+:toc: auto
+:toc-title: Sommaire
+:toclevels: 4
+:title-separator: any
+:nofooter:
+
+toc::[]
+
+== Introduction
+Ce projet a été réalisé dans le cadre du cours de développement web de l'année 2023 à l'Université de Blagnac par: +
+
+* Hugo Wendjaneh - Groupe: 2A
+
+== Présentation du projet
+Le projet consiste à réaliser une application web via Angular. +
+Il s'agit d'un compteur de points pour les parties de tarot.
+Il permet aussi d'afficher le détail de chaque manche de chaque partie.
+
+== La liste des fonctionnalités minimales développées
+
+. Création d'une nouvelle partie
+. Sélection/Reprise d'une ancienne partie
+. Détail d'une partie avec toutes ces manches
+. Saisie des informations d'une manche pour le comptage automatique des points
+
+== La liste des fonctionnalités bonus développées
+
+. Affichage du détail d'une partie sous forme de graphique dinamique (via Chart.js).
+. Barre de navigation dynamique
+. Suppréssion d'une partie
+. Stockage de la date de la partie
+. CSS personnalisé
+. Site totalement responsive
+. Redirection vers la page d'accueil en cas de route non définie. Exemple: ```/jenesaispas```
+. Redirection vers la page d'accueil en cas de route invalide. Exemple: l'id d'une partie n'existe pas: ```/game/1230``` ou ```/details/1230```
+
+== Présentation rapide des classes
+=== Les services
+Il y a 2 services: +
+. ```GameService```: Permet de gérer la communication avec le JSON Server. Il permet de récupérer les données, de les modifier et de les supprimer.
+
+. ```navigationHistoryService```: Permet de gérer la navigation entre les routes. Il permet de stocker la route précédente et la route actuelle afin de pouvoir revenir à la route précédente dans certaines conditions.
+
+=== Les models
+Il y a 5 models: +
+
+. ```Game```: Permet de gérer les données d'une partie. Il contient les attributs suivants: +
+.. ```id```: L'id de la partie
+.. ```time```: La date de la partie
+.. ```players```: Les joueurs de la partie
+
+. ```Player```: Permet de gérer les données d'un joueur. Il contient les attributs suivants: +
+.. ```name```: Le nom du joueur
+.. ```score```: Le score du joueur
+
+. ```Round```: Permet de gérer les données d'une manche. Il contient les attributs suivants: +
+.. ```id```: L'id de la manche
+.. ```idGame```: L'id de la partie
+.. ```roundNumber```: Le numéro de la manche
+.. ```scores```: Les scores de chaque joueurs la manche
+
+. ```Time```: Permet de gérer les données d'une date. Il contient les attributs suivants: +
+.. ```date```: La date
+.. ```hour```: L'heure
+.. Il a aussi une méthode statique public qui permet de récupérer un ```time``` avec la date et l'heure actuel bien formaté. ```getTime```: Retourne un ```time``` avec la date et l'heure actuel bien formaté.
+
+. ```loading-status```: Permet de gérer le status de chargement des données. C'est une class enum qui contient les attributs suivants: +
+.. ```LOADING```: Le status de chargement
+.. ```LOADED```: Le status de chargement terminé
+.. ```ERROR```: Le status d'erreur
+
+=== Les composants
+
+
+== Présentation de l'ergonomie de l'application
+
+== Présentation des routes
+
+=== Listage des routes
+==== 5 routes statiques
+
+. `````` ou ```/```: Redirige vers la route ```/home```
+. ```/home```: Affiche la page d'accueil
+. ```/games/list```: Affiche la liste des parties
+. ```new/game```: Affiche le formulaire de création d'une nouvelle partie
+. ```**```: Tout autre route non définie redirige vers la route ```/home```
+
+==== 2 routes dynamiques
+. ```/details/:id```: Affiche le détail d'une partie en fonction de son id
+. ```game/:id```: Affiche le formulaire de saisie d'une manche en fonction de l'id de la partie
+
+=== Passage d'une route à une autre
+
+Depuis la route ```/home```, nous pouvons accéder à la route ```/new/game``` via le bouton ```Nouvelle partie``` et à la route ```/games/list``` via le bouton ```Anciennes parties```. +
+
+Depuis la route ```/new/game```, via la navBar nous pouvons accéder à la route ```/home``` via le bouton ```Accueil``` et à la route ```/games/list``` via le bouton ```Liste des parties```. +
+
+Depuis la route ```/games/list```, via la navBar nous pouvons accéder à la route ```/home``` via le bouton ```Accueil``` et à la route ```/new/game``` via le bouton ```Nouvelle partie```. +
+
+Depuis la route ```/games/list```, nous pouvons accéder à la route ```/details/:id``` via le bouton ```Détails de la partie``` et à la route ```/game/:id``` via le bouton ```Continuer la partie```. Nous pouvons aussi aller à la route ```/new/game``` via le bouton ```Nouvelle partie``` dans la navBar. +
+
+Depuis la route ```/details/:id```, via la navBar nous pouvons accéder à la route ```/home``` via le bouton ```Accueil``` et à la route ```/games/list``` via le bouton ```Liste des parties```. Nous pouvons aussi aller à la route ```/new/game``` via le bouton ```Nouvelle partie```. +
+Si nous étions sur une partie en cours ```/game/:id```, nous pouvons aussi accéder à la route ```/game/:id``` via le bouton ```Retour```. +
+
+Depuis la route ```/game/:id```, via la navBar nous pouvons accéder à la route ```/home``` via le bouton ```Accueil``` et à la route ```/games/list``` via le bouton ```Liste des parties```. Nous pouvons aussi aller à la route ```/new/game``` via le bouton ```Nouvelle partie``` et nous pouvons aussi accéder à la route ```/details/:id``` via le bouton ```Détails de la partie```. +

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavigationHisotryService } from 'app/services/navigation-hisotry.service';
+import { NavigationHistoryService } from 'app/services/navigation-history.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private navigation: NavigationHisotryService
+    private navigation: NavigationHistoryService
   ) { }
 
   /**
