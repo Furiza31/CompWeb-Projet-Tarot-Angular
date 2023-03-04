@@ -29,5 +29,25 @@ export class GameService {
   getRounds(id: number): Observable<Round[]> {
     return this.http.get<Round[]>(`${this.gameRoundsAPI}?idPartie=${id}`);
   }
+
+  newGameParty(game: Game): Observable<Game> {
+    return this.http.post<Game>(this.gamePartyAPI, game);
+  }
+
+  addRound(round: Round): Observable<Round> {
+    return this.http.post<Round>(this.gameRoundsAPI, round);
+  }
+
+  updateGameParty(game: Game): Observable<Game> {
+    return this.http.put<Game>(`${this.gamePartyAPI}/${game.id}`, game);
+  }
+
+  deleteRound(id: number): Observable<Round> {
+    return this.http.delete<Round>(`${this.gameRoundsAPI}/${id}`);
+  }
+
+  deleteGameParty(id: number): Observable<Game> {
+    return this.http.delete<Game>(`${this.gamePartyAPI}/${id}`);
+  }
   
 }

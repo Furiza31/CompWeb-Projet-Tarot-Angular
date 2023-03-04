@@ -63,12 +63,12 @@ fieldset>div>div>div i {
     width: 25px;
 }
 
-@media screen and (max-width: 700px) {
-    fieldset>div>div {
-        width: 50%;
-    }
+@media screen and (max-width: 1000px) {
     fieldset>div>a {
         width: 100%;
+    }
+    fieldset>div>div {
+        width: 50%;
     }
     fieldset>div>a:not(:first-child) {
         margin-top: 15px;

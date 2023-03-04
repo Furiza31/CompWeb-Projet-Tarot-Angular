@@ -18,6 +18,9 @@ export class GameDetailsGraphicItemComponent implements OnInit {
 
   constructor() { }
 
+  /**
+   * Crée le graphique de la partie
+   */
   createGraph() {
     let colors = ["#EB5353", "#F9D923", "#36AE7C", "#187498"];
     let labels: string[] = [];
@@ -93,6 +96,9 @@ export class GameDetailsGraphicItemComponent implements OnInit {
     });
   }
 
+  /**
+   * S'active au chargement du composant
+   */
   ngOnInit(): void {
     this.createGraph();
   }

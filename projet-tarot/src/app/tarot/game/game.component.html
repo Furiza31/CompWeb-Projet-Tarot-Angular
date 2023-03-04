@@ -1,1 +1,148 @@
-<p>game works!</p>
+<app-nav-bar></app-nav-bar>
+<main>
+    <h1>Nouvelle manche</h1>
+    <div *ngIf="this.status == this.loadingStatus.LOADED" id="loaded">
+        <h2>Manche n°{{this.lastRoundNumber}}</h2>
+        <h3 class="red" *ngIf="this.errorForm">Veuillez remplir tous les champs</h3>
+        <h3 class="red" *ngIf="this.error">Une érreur est survenue lors de l'ajout du round</h3>
+        <section>
+            <form #formulaire="ngForm" (ngSubmit)="onSubmit(formulaire)">
+                <div>
+                    <div>Qui est le preneur ?</div>
+                    <div class="radioLikeButton">
+                        <div *ngFor="let player of this.game.players; let i = index">
+                            <input type="radio" name="preneur" value="{{i}}" id="preneur{{i}}" ngModel>
+                            <label for="preneur{{i}}">{{player.name}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Combien le preneur à t-il de bout ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="bout" value="56" id="bout0" ngModel>
+                            <label for="bout0">0 Bout</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bout" value="51" id="bout1" ngModel>
+                            <label for="bout1">1 Bout</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bout" value="41" id="bout2" ngModel>
+                            <label for="bout2">2 Bout</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bout" value="36" id="bout3" ngModel>
+                            <label for="bout3">3 Bout</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Quel est le contrat du preneur ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="contrat" value="1" id="contrat0" ngModel>
+                            <label for="contrat0">Une petite</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="contrat" value="2" id="contrat1" ngModel>
+                            <label for="contrat1">Une garde</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="contrat" value="4" id="contrat2" ngModel>
+                            <label for="contrat2">Une garde sans</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="contrat" value="6" id="contrat3" ngModel>
+                            <label for="contrat3">Une garde contre</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Combien le preneur à t-il fait de points ?</div>
+                    <div>
+                        <div>
+                            <input type="number" name="points" id="points" placeholder="Points du preneur" ngModel>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Il y a un petit bout ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="petitBoutBool" value="0" id="petitBoutBool0" ngModel (change)="this.petitBoutBool = true;">
+                            <label for="petitBoutBool0">Oui</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="petitBoutBool" value="1" id="petitBoutBool1" ngModel (change)="this.petitBoutBool = false;">
+                            <label for="petitBoutBool1">Non</label>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="this.petitBoutBool">
+                    <div>À qui appartient le petit bout ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="petitBout" value="10" id="petitBout0" ngModel>
+                            <label for="petitBout0">Preneur</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="petitBout" value="-10" id="petitBout1" ngModel>
+                            <label for="petitBout1">Défenseur</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Il y a une poignée ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="poigneeBool" value="0" id="poigneeBool0" ngModel (change)="this.poigneeBool = true;">
+                            <label for="poigneeBool0">Oui</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="poigneeBool" value="1" id="poigneeBool1" ngModel (change)="this.poigneeBool = false;">
+                            <label for="poigneeBool1">Non</label>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="this.poigneeBool">
+                    <div>À qui appartient la poignée la plus importante ?</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="poigneeOwner" value="0" id="poigneeOwner0" ngModel>
+                            <label for="poigneeOwner0">Preneur</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="poigneeOwner" value="1" id="poigneeOwner1" ngModel>
+                            <label for="poigneeOwner1">Défenseur</label>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="this.poigneeBool">
+                    <div>Quel est le type de la poignée</div>
+                    <div class="radioLikeButton">
+                        <div>
+                            <input type="radio" name="poignee" value="20" id="poignee0" ngModel>
+                            <label for="poignee0">Simple poignée</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="poignee" value="30" id="poignee1" ngModel>
+                            <label for="poignee1">Double poignée</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="poignee" value="40" id="poignee2" ngModel>
+                            <label for="poignee2">Triple poignée</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><button type="submit">Finir la manche</button></div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">
+        <div id="loader"></div>
+        <h2>Chargement</h2>
+    </div>
+</main>

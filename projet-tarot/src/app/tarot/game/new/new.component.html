@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<main>
+    <h1><i class="fa-solid fa-dice fa-flip-horizontal"></i>Nouvelle partie<i class="fa-solid fa-dice"></i></h1>
+    <section *ngIf="this.status == this.loadingStatus.LOADED">
+        <fieldset>
+            <legend>Nom des joueurs</legend>
+            <form #formulaire="ngForm" (ngSubmit)="onSubmit(formulaire)">
+                <div>
+                    <div>
+                        <label for="player1"><i class="fa-solid fa-user"></i>Joueur 1</label>
+                        <input type="text" id="player1" name="player1" required ngModel>
+                    </div>
+                    <div>
+                        <label for="player2"><i class="fa-solid fa-user"></i>Joueur 2</label>
+                        <input type="text" id="player2" name="player2" required ngModel>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="player3"><i class="fa-solid fa-user"></i>Joueur 3</label>
+                        <input type="text" id="player3" name="player3" required ngModel>
+                    </div>
+                    <div>
+                        <label for="player4"><i class="fa-solid fa-user"></i>Joueur 4</label>
+                        <input type="text" id="player4" name="player4" required ngModel>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <button type="submit" [disabled]="!formulaire.valid" [ngClass]="{'disabled': !formulaire.valid}">Commencer la partie</button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </section>
+    <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">
+        <div></div>
+        <h2>Chargement</h2>
+    </div>
+</main>

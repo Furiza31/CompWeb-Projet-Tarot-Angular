@@ -1,11 +1,13 @@
+<app-nav-bar></app-nav-bar>
 <main>
     <h1>ANCIENNES PARTIES</h1>
     <div *ngIf="this.status == this.loadingStatus.LOADED" id="loaded">
         <h2 *ngIf="gameSize <= 0">Aucune partie jouée</h2>
         <h2 *ngIf="gameSize == 1">{{gameSize}} Partie jouée</h2>
         <h2 *ngIf="gameSize > 1">{{gameSize}} Parties jouées</h2>
+        <h2 *ngIf="error" class="red">Impossible de supprimer cette partie</h2>
         <section>
-            <app-game-list-item *ngFor="let game of games" [game]="game"></app-game-list-item>
+            <app-game-list-item *ngFor="let game of games" [game]="game" [parent]="this"></app-game-list-item>
         </section>
     </div>
     <div *ngIf="this.status == this.loadingStatus.LOADING" id="loading">

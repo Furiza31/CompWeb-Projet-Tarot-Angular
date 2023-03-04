@@ -10,6 +10,9 @@ import { HomeComponent } from './tarot/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameListItemComponent } from './tarot/game-list/game-list-item/game-list-item.component';
 import { GameDetailsGraphicItemComponent } from './tarot/game-details/game-details-graphic-item/game-details-graphic-item.component';
+import { FormsModule } from '@angular/forms';
+import { NewComponent } from './tarot/game/new/new.component';
+import { NavBarComponent } from './tarot/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { GameDetailsGraphicItemComponent } from './tarot/game-details/game-detai
     HomeComponent,
     GameListItemComponent,
     GameDetailsGraphicItemComponent,
+    NewComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

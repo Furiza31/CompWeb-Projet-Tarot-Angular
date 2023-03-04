@@ -1,0 +1,8 @@
+<header>
+    <nav>
+        <a routerLink="/home" routerLinkActive="active">Accueil</a>
+        <a routerLink="/games/list" routerLinkActive="active">Liste des parties</a>
+        <a routerLink="/details/{{idPartie}}" *ngIf="idPartie" routerLinkActive="active">Détail de la partie</a>
+        <a routerLink="{{this.previousUrl}}" *ngIf="this.canGoBack">Retour</a>
+    </nav>
+</header>

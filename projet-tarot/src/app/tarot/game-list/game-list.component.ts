@@ -15,6 +15,7 @@ export class GameListComponent implements OnInit {
   // varaible to dodge the loading time insted of using "| async" -> async remake a request
   public games: Game[] = [];
   public gameSize: number = 0;
+  public error: boolean = false;
 
   // status of the loading
   public status: LoadingStatus = LoadingStatus.LOADING;
@@ -24,7 +25,11 @@ export class GameListComponent implements OnInit {
     private gameService: GameService
   ) { }
 
+  /**
+   * S'active au chargement du composant
+   */
   ngOnInit(): void {
+    // recupere les partiees
     this.gamesObservable = this.gameService.getGameParties();
     this.gamesObservable.subscribe({
       next: (i) => {

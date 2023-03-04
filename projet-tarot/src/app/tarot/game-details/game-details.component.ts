@@ -23,9 +23,13 @@ export class GameDetailsComponent implements OnInit {
     private router: Router
   ) { }
 
+  /**
+   * S'active au chargement du composant
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
 
+    // recupere la partie
     this.gameService.getGameParty(id).subscribe({
       next: game => {
         this.game = game;
