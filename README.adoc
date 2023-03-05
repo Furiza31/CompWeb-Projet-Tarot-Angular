@@ -10,7 +10,9 @@ toc::[]
 == Introduction
 Ce projet a été réalisé dans le cadre du cours de développement web de l'année 2023 à l'Université de Blagnac par: +
 
-* Hugo Wendjaneh - Groupe: 2A
+* Hugo Wendjaneh - Groupe: 2A +
+
+https://github.com/Furiza31/CompWeb-Projet-Tarot-Angular[Le lien vers le projet sur GitHub]
 
 == Présentation du projet
 Le projet consiste à réaliser une application web via Angular. +
