@@ -38,6 +38,7 @@ Il permet aussi d'afficher le détail de chaque manche de chaque partie.
 == Présentation rapide des classes
 === Les services
 Il y a 2 services: +
+
 . ```GameService```: Permet de gérer la communication avec le JSON Server. Il permet de récupérer les données, de les modifier et de les supprimer.
 
 . ```navigationHistoryService```: Permet de gérer la navigation entre les routes. Il permet de stocker la route précédente et la route actuelle afin de pouvoir revenir à la route précédente dans certaines conditions.
@@ -71,9 +72,38 @@ Il y a 5 models: +
 .. ```ERROR```: Le status d'erreur
 
 === Les composants
+Tout les composant sont dans le dossier tarot. +
 
+. ```game```: Permet de jouer une partie. Il permet de saisir les informations d'une manche et de compter automatiquement les points. Il appel aussi le service ```GameService``` pour récupérer les données de la partie et modifier / ajouté des données.
+
+. ```new```: C'est un composant qui est placé dans le composant game pour indiquer que l'on est en train de créer une nouvelle partie. Il permet de saisir les informations d'une nouvelle partie comme par exemple le nom des joueurs. Il appel aussi le service ```GameService``` pour créer une nouvelle partie.
+
+. ```game-details```: Permet d'afficher les détails d'une partie. Il à un composant enfant ```game-details-graphic-item``` qui va ce charger de l'affichage du graphique. Il appel aussi le service ```GameService``` pour récupérer les données de la partie.
+
+. ```game-details-graphic-item```: Permet d'afficher le graphique de la partie. Il utilise la librairie Chart.js pour afficher le graphique. Il appel aussi le service ```GameService``` pour récupérer les données de la partie.
+
+. ```game-list```: Permet d'afficher la liste des parties. Il a un composant enfant ```game-list-item``` qui va ce charger de l'affichage d'une partie. Il appel aussi le service ```GameService``` pour récupérer les données de la partie.
+
+. ```game-list-item```: Permet d'afficher une partie. Il appel aussi le service ```GameService``` pour récupérer les données de la partie.
+
+. ```home```: Permet d'afficher la page d'accueil.
+
+. ```nav-bar```: Permet d'afficher la barre de navigation. Il appel aussi le service ```navigationHistoryService``` pour récupérer la route précédente et la route actuelle.
 
 == Présentation de l'ergonomie de l'application
+=== Présentation de l'interface
+
+. La barre de navigation est présente sur toutes les pages sauf la page d'accueil. Elle permet de naviguer entre les différentes pages de l'application. Elle est dynamique et affiche le bouton ```Retour``` si une partie est en cours.
+
+. La page d'accueil permet de créer une nouvelle partie ou de voir les anciennes parties.
+
+. La page de création d'une nouvelle partie permet de saisir les informations d'une nouvelle partie comme par exemple le nom des joueurs.
+
+. La page de détail d'une partie permet d'afficher les détails d'une partie. Il y a un graphique qui permet d'afficher l'évolution du score de chaque joueur au cours de la partie.
+
+. La page de liste des parties permet d'afficher la liste des parties. Il y a un bouton pour supprimer une partie. Il y a un bouton pour afficher les détails d'une partie. Il y a un bouton pour continuer une partie.
+
+. La page de jeu permet de jouer une partie. Elle permet de saisir les informations d'une manche et de compter automatiquement les points.
 
 == Présentation des routes
 
