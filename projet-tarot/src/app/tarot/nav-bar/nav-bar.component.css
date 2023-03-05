@@ -1,6 +1,9 @@
 header {
     position: sticky;
-    display: block;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     height: 60px;
     background-color: var(--grey);
@@ -11,6 +14,7 @@ header {
 }
 
 header nav {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -40,6 +44,11 @@ header nav a.active {
     background-color: var(--blue);
 }
 
+header div#close,
+header div#open {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     header nav {
         padding: 0 10px;
@@ -47,5 +56,54 @@ header nav a.active {
     }
     header nav a {
         font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header {
+        height: 60px;
+    }
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+        gap: 10px;
+        display: none;
+    }
+    header div#open {
+        display: block;
+    }
+    header div#close {
+        display: none;
+    }
+    header div#open i,
+    header div#close i {
+        font-size: 2rem;
+        color: var(--white);
+        cursor: pointer;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    header.active {
+        height: 100vh;
+    }
+    header.active div#open {
+        display: none;
+    }
+    header.active div#close {
+        display: block;
+    }
+    header.active nav {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    header.active nav a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    header.active+html,
+    header.active+body {
+        overflow: hidden;
     }
 }

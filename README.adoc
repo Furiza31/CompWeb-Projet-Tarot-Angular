@@ -31,7 +31,7 @@ Il permet aussi d'afficher le détail de chaque manche de chaque partie.
 . Suppréssion d'une partie
 . Stockage de la date de la partie
 . CSS personnalisé
-. Site totalement responsive
+. Site totalement responsive, y compris la barre de navigation
 . Redirection vers la page d'accueil en cas de route non définie. Exemple: ```/jenesaispas```
 . Redirection vers la page d'accueil en cas de route invalide. Exemple: l'id d'une partie n'existe pas: ```/game/1230``` ou ```/details/1230```
 

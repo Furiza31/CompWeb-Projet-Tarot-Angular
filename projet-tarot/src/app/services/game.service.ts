@@ -27,7 +27,7 @@ export class GameService {
   }
 
   getRounds(id: number): Observable<Round[]> {
-    return this.http.get<Round[]>(`${this.gameRoundsAPI}?idPartie=${id}`);
+    return this.http.get<Round[]>(`${this.gameRoundsAPI}?idGame=${id}`);
   }
 
   newGameParty(game: Game): Observable<Game> {

@@ -1,5 +1,11 @@
-<header>
-    <nav>
+<header id="header">
+    <div id="open">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div id="close">
+        <i class="fas fa-times"></i>
+    </div>
+    <nav id="nav">
         <a routerLink="/home" routerLinkActive="active">Accueil</a>
         <a routerLink="/games/list" routerLinkActive="active">Liste des parties</a>
         <a routerLink="/details/{{idPartie}}" *ngIf="idPartie" routerLinkActive="active">Détail de la partie</a>
